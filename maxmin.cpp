@@ -2,10 +2,15 @@
 using namespace std;
 int main() {
     int A[]={1,3,4,1};
-    int maximum = 0, minimum = A[0];
-    for (int i = 0; i < 4 - 1; i++) {
-        maximum = max(maximum, max(A[i], A[i + 1]));
-        minimum = min(minimum, min(A[i], A[i + 1]));
+    int maximum=INT_MIN;
+    int minimum=INT_MAX;
+    for(int i=0;i<4;i++){
+        if(A[i]<minimum){
+            minimum=A[i];
+        }
+        if(A[i]>maximum){
+            maximum=A[i];
+        }
     }
-    cout << maximum << endl<<minimum<<endl<<maximum + minimum;
+    return maximum+minimum;
 }
